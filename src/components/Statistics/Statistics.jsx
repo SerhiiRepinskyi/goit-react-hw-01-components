@@ -10,10 +10,10 @@ const Statistics = ({ title, stats }) => {
       {title && <h2 class="title">{title}</h2>}
 
       <ul class="stat-list">
-        {stats.map(stat => (
-          <li class="item" key={stat.id}>
-            <span class="label">{stat.label}</span>
-            <span class="percentage">{stat.percentage}%</span>
+        {stats.map(({ id, label, percentage }) => (
+          <li class="item" key={id}>
+            <span class="label">{label}</span>
+            <span class="percentage">{percentage}%</span>
           </li>
         ))}
       </ul>

@@ -3,16 +3,11 @@ import PropTypes from 'prop-types';
 const FriendList = ({ friends }) => {
   return (
     <ul class="friend-list">
-      {friends.map(friend => (
-        <li class="item" key={friend.id}>
-          <span class="status">{friend.isOnline}</span>
-          <img
-            class="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p class="name">{friend.name}</p>
+      {friends.map(({ id, isOnline, avatar, name }) => (
+        <li class="item" key={id}>
+          <span class="status">{isOnline}</span>
+          <img class="avatar" src={avatar} alt="User avatar" width="48" />
+          <p class="name">{name}</p>
         </li>
       ))}
     </ul>
@@ -21,8 +16,8 @@ const FriendList = ({ friends }) => {
 
 FriendList.protoTypes = {
   friends: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
       isOnline: PropTypes.bool.isRequired,
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,

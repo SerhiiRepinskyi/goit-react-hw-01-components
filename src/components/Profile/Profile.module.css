@@ -2,7 +2,7 @@
   background-color: #fff;
   width: 300px;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: 30px;
 
   border: 1px solid #d8e4e2;
   border-radius: 10px;
@@ -69,7 +69,7 @@
 
 .stats > li:hover {
   background-color: #fff;
-  color: #c11c1c;
+  color: green;
 }
 
 .stats > li:last-child {
